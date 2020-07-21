@@ -12,7 +12,6 @@ O objetivo desta avaliação é medir o nível de conhecimento do candidato nas 
 - PHP - OO
 - PHP - Procedural
 - Laravel Framework
-- Experiência em integração de websites
 - Experiência em construções de API's REST
 - Integração com API's e SDKS externas
 - Git
@@ -20,12 +19,12 @@ O objetivo desta avaliação é medir o nível de conhecimento do candidato nas 
 
 ### CONHECIMENTOS DESEJÁVEIS:
 
-- Javascript intermedirio
+- Javascript intermediário
 - Integração
 - Noções de estruturação e configuração de servidores
 
 ### DIFERENCIAIS:
-
+- VueJS
 - NodeJS
 
 ### BENEFÍCIOS
@@ -33,6 +32,8 @@ O objetivo desta avaliação é medir o nível de conhecimento do candidato nas 
 - Vale transporte
 - Vale refeição
 - Convênio médico (50%)
+- Seguro de vida
+- Participação de lucros
 
 ### OBSERVAÇÕES GERAIS:
 
@@ -52,11 +53,12 @@ R. Paulo de faria, 146 - Sala 901/902 - Tucuruvi, São Paulo - SP
 
 # O teste
 O objetivo do teste é conhecer as habilidades em:
-- Programação PHP / Laravel
-- Organização (código/arquivos)
-- Controle de versão
-- Análise/Entendimento de requisitos
-- Capricho (atenção com uri's, validações, modelagem, nomenclatura, padrão de código em inglês...)
+- Programação PHP / Laravel.
+- Organização (código/arquivos).
+- Controle de versão.
+- Análise/Entendimento de requisitos.
+- Desenvolver o back-end como API e consumir no front-end.
+- Capricho (atenção com uri's, validações, modelagem, nomenclatura, padrão de código em inglês...).
 
 ## Importante
 Tudo que for desenvolvido não será utilizado comercialmente e a única intenção é de avaliar o conhecimento atual do interessado.
@@ -100,14 +102,11 @@ Criar um gerenciamento aonde seja possível Criar, Listar, Editar e Visualizar u
 ### O que devo utilizar ?
 - Laravel 7
 - MySQL
-- VueJS
 
 ### Links uteis
 - [Laravel](https://laravel.com/docs/7.x)
-- [Insomnia](https://insomnia.rest/)
 
 # Observações:
-
 - Não tenha pressa! O que será avaliado é a qualidade do código não a velocidade de desenvolvimento. Portanto, qualquer generator / scaffolding de CRUD, MVC, etc, torna-se desnecessário. 
 - Se não for possível terminar todas as funcionalidades, não tem problema.
 - Seu código-fonte não precisa ser bonito ou ter um UX excelente. Você pode optar por templates para o frontend, se assim desejar.
@@ -117,8 +116,6 @@ Criar um gerenciamento aonde seja possível Criar, Listar, Editar e Visualizar u
 ### Como participar ?
 - Fazer um fork deste repositório
 - Programar para atender os requisitos
-- Fazer um merge request quando finalizar. É importante que conste no merge request as instruções para execultar a aplicação desenolvida (preferencialmente usando markdown).
 - Deve ser utilizado o Composer para gerenciar as dependências da aplicação. 
-- Crie um README com orientações para a instalação.
 
 # Boa sorte
