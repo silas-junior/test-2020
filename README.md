@@ -118,4 +118,7 @@ Criar um gerenciamento aonde seja possível Criar, Listar, Editar e Visualizar u
 - Programar para atender os requisitos
 - Deve ser utilizado o Composer para gerenciar as dependências da aplicação. 
 
+### Entrega
+- Enviar link do GIT para o WhatsApp https://wa.me/5511998005901
+
 # Boa sorte
