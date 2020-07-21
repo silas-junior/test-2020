@@ -97,14 +97,14 @@ Criar um gerenciamento aonde seja possível Criar, Listar, Editar e Visualizar u
 - As tabelas do banco de dados criadas através de migrations.
 - Pretendemos conectar um aplicativo mobile nesta nova plataforma. 
 
-### Links uteis
-https://laravel.com/docs/7.x
-https://insomnia.rest/
-
 ### O que devo utilizar ?
 - Laravel 7
 - MySQL
 - VueJS
+
+### Links uteis
+- [Laravel](https://laravel.com/docs/7.x)
+- [Insomnia](https://insomnia.rest/)
 
 # Observações:
 
