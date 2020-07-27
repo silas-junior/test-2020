@@ -1,124 +1,61 @@
-### [VAGA - Programador PHP - SÃO PAULO/SP]
-# Teste prático - Programador(a) PHP Júnior – Laravel
+<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
-**Desenvolver uma aplicação simples utilizando [Laravel 7](https://laravel.com/docs/7.x).**
-O objetivo desta avaliação é medir o nível de conhecimento do candidato nas áreas em que a vaga será exigida.
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
 
-### BEELABS - 2020
-## Contratação CLT
+## About Laravel
 
-### HABILIDADES EM:
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- PHP - OO
-- PHP - Procedural
-- Laravel Framework
-- Experiência em construções de API's REST
-- Integração com API's e SDKS externas
-- Git
-- Composer
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-### CONHECIMENTOS DESEJÁVEIS:
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-- Javascript intermediário
-- Integração
-- Noções de estruturação e configuração de servidores
+## Learning Laravel
 
-### DIFERENCIAIS:
-- VueJS
-- NodeJS
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-### BENEFÍCIOS
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-- Vale transporte
-- Vale refeição
-- Convênio médico (50%)
-- Seguro de vida
-- Participação de lucros
+## Laravel Sponsors
 
-### OBSERVAÇÕES GERAIS:
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-- De segunda a sexta. Carga horária de 08h com horário flexivel entre 9h e 18h
-- Possibilidade de 1 dia na semana como home office
+### Premium Partners
 
-### Remuneração
-- de R$ 1.900,00 à R$ 3.500,00 conforme experiência
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[OP.GG](https://op.gg)**
 
-### CONTATOS:
+## Contributing
 
-- E-mail: eduardo@appbee.online
-- Telefone: +55 11 99800-5901
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-### Local da empresa
-R. Paulo de faria, 146 - Sala 901/902 - Tucuruvi, São Paulo - SP
+## Code of Conduct
 
-# O teste
-O objetivo do teste é conhecer as habilidades em:
-- Programação PHP / Laravel.
-- Organização (código/arquivos).
-- Controle de versão.
-- Análise/Entendimento de requisitos.
-- Desenvolver o back-end como API e consumir no front-end.
-- Capricho (atenção com uri's, validações, modelagem, nomenclatura, padrão de código em inglês...).
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Importante
-Tudo que for desenvolvido não será utilizado comercialmente e a única intenção é de avaliar o conhecimento atual do interessado.
+## Security Vulnerabilities
 
-# Escopo
-Deve-se criar uma aplicação em PHP para resolver o problema descrito abaixo, utilizando framework Laravel 7. Fique a vontade para explorar todo o seu conhecimento em automação de tarefas, CSS, Vue.JS e demais ferramentas.
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-### Qual é o teste ?
-Prof. Beeliano está lançando uma nova plataforma de ensino online. Nesta plataforma, desejamos realizar a matrícula de alunos em cursos através de um painel administrativo. 
+## License
 
-# Requisitos
-- Um aluno pode ser matriculado em mais de um curso
-- O administrador do sistema que realizará as matrículas. Não é necessário desenvolver tela para alunos.
-- A consulta pelo nome e pelo e-mail é requisito funcional
-- Não é necessário desenvover tela de login / autenticação. 
-
-#### CRUD de Áreas de Cursos
-Criar um gerenciamento aonde seja possível Criar, Listar, Editar e Visualizar uma área de curso (Biologia, Química, Física, por exemplo). 
-
-##### Atributos de um Curso são:
-- título (obrigatório)
-- descrição 
-
-#### CRUD de Alunos
-Criar um gerenciamento aonde seja possível Criar, Listar, Editar e Visualizar um Aluno. 
-
-##### Atributos de um Aluno são:
-- nome (obrigatório)
-- email (obrigatório)
-- data de nascimento
-
-#### CRUD de Matrículas
-Criar um gerenciamento aonde seja possível Criar, Listar, Editar e Visualizar uma matrícula. 
-
-# Plus ++ 
-- Utlize Seeders e Factories para inserir dados fakers no banco de dados.
-- Utilize as melhores práticas da Orientação a Objetos.
-- As tabelas do banco de dados criadas através de migrations.
-- Pretendemos conectar um aplicativo mobile nesta nova plataforma. 
-
-### O que devo utilizar ?
-- Laravel 7
-- MySQL
-
-### Links uteis
-- [Laravel](https://laravel.com/docs/7.x)
-
-# Observações:
-- Não tenha pressa! O que será avaliado é a qualidade do código não a velocidade de desenvolvimento. Portanto, qualquer generator / scaffolding de CRUD, MVC, etc, torna-se desnecessário. 
-- Se não for possível terminar todas as funcionalidades, não tem problema.
-- Seu código-fonte não precisa ser bonito ou ter um UX excelente. Você pode optar por templates para o frontend, se assim desejar.
-- Não precisa ser complexo, com varias lib’s e etc. O legal é usar o necessário para ter um código de qualidade e de fácil evolução. 
-- Lembrando código de qualidade, você pode e deve fazer o que achar necessário para isso, mesmo que não esteja listado aqui. 
-
-### Como participar ?
-- Fazer um fork deste repositório
-- Programar para atender os requisitos
-- Deve ser utilizado o Composer para gerenciar as dependências da aplicação. 
-
-### Entrega
-- Enviar link do GIT para o WhatsApp https://wa.me/5511998005901
-
-# Boa sorte
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
