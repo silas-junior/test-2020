@@ -15,19 +15,19 @@ class StudentSeeder extends Seeder
         Student::create([
             'name' => \Faker\Factory::create()->name,
             'email' => \Faker\Factory::create()->unique()->email,
-            'birth_date' => \Faker\Factory::create()->date('d-m-Y')
+            'birth_date' => \Faker\Factory::create()->date('d/m/Y')
         ]);
 
         Student::create([
             'name' => \Faker\Factory::create()->name ,
             'email' => \Faker\Factory::create()->unique()->email,
-            'birth_date' => \Faker\Factory::create()->date('d-m-Y')
+            'birth_date' => \Faker\Factory::create()->date('d/m/Y')
         ]);
 
         Student::create([
             'name' => \Faker\Factory::create()->name ,
             'email' => \Faker\Factory::create()->unique()->email,
-            'birth_date' => \Faker\Factory::create()->date('d-m-Y')
+            'birth_date' => \Faker\Factory::create()->date('d/m/Y')
         ]);
     }
 }
