@@ -26,3 +26,11 @@ Route::prefix('cursos')->group(function () {
     Route::put('{course}' , 'CourseAreaController@update')->name('course.update');
     Route::delete('{course}' , 'CourseAreaController@destroy')->name('course.delete');
 });
+
+Route::prefix('alunos')->group(function () {
+    Route::get('' , 'StudentsController@index')->name('student.index');
+    Route::post('cadastro' , 'StudentsController@store')->name('student.store');
+    Route::get('{student}' , 'StudentsController@show')->name('student.show');
+    Route::put('{student}' , 'StudentsController@update')->name('student.update');
+    Route::delete('{student}' , 'StudentsController@destroy')->name('student.delete');
+});
