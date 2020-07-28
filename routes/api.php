@@ -34,3 +34,12 @@ Route::prefix('alunos')->group(function () {
     Route::put('{student}' , 'StudentsController@update')->name('student.update');
     Route::delete('{student}' , 'StudentsController@destroy')->name('student.delete');
 });
+
+
+Route::prefix('matriculas')->group(function () {
+    Route::get('' , 'MatriculationController@index')->name('matriculation.index');
+    Route::post('cadastro' , 'MatriculationController@store')->name('matriculation.store');
+    Route::get('{matriculation}' , 'MatriculationController@show')->name('matriculation.show');
+    Route::put('{matriculation}' , 'MatriculationController@update')->name('matriculation.update');
+    Route::delete('{matriculation}' , 'MatriculationController@destroy')->name('matriculation.delete');
+});
