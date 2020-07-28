@@ -19,8 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/cursos' , 'CourseAreaController@index')->name('course.index');
-Route::post('/cursos/cadastro' , 'CourseAreaController@store')->name('course.store');
-Route::get('/cursos/{course}' , 'CourseAreaController@show')->name('course.show');
-Route::put('/cursos/{course}' , 'CourseAreaController@update')->name('course.update');
-Route::delete('cursos/{course}' , 'CourseAreaController@destroy')->name('course.delete');
+Route::prefix('cursos')->group(function () {
+    Route::get('' , 'CourseAreaController@index')->name('course.index');
+    Route::post('cadastro' , 'CourseAreaController@store')->name('course.store');
+    Route::get('{course}' , 'CourseAreaController@show')->name('course.show');
+    Route::put('{course}' , 'CourseAreaController@update')->name('course.update');
+    Route::delete('{course}' , 'CourseAreaController@destroy')->name('course.delete');
+});

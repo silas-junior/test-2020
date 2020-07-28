@@ -70,7 +70,7 @@ class CourseAreaController extends Controller
     {
         $searchCourse = Course::find($course);
 
-        if ($searchCourse ===  1) {
+        if ($searchCourse) {
             return response()->json($searchCourse , 200);
         }
 
