@@ -9,6 +9,6 @@ class Student extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'name, email, birth_date'
+        'name' , 'email' , 'birth_date',
     ];
 }
