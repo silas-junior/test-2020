@@ -48,7 +48,6 @@ class CourseAreaController extends Controller
         }
 
         $newCourse = (Course::create($request->all()));
-        dd($newCourse);
         if ($newCourse) {
             return response()->json([
                 'status' => 'success',
