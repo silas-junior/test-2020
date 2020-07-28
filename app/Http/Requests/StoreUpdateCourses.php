@@ -24,8 +24,8 @@ class StoreUpdateCourses extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:3|max:25',
-            'description' => 'required|min:10|max:255',
+            'title' => 'required|unique:courses|min:3|max:25',
+            'description' => 'required|unique:courses|min:10|max:255',
         ];
     }
 
@@ -33,12 +33,12 @@ class StoreUpdateCourses extends FormRequest
     {
         return [
             'title.required' => 'O campo título é obrigatório',
-            'title.alpha' => 'O campo título aceita somente letras',
+            'title.unique' => 'O título inserido já existe',
             'title.min' => 'O campo título tem menos de 3 caractéres',
             'title.max' => 'O campo título tem mais de 25 caractéres',
 
             'description.required' => 'O campo descrição é obrigatório',
-            'description.alpha' => 'O campo descrição aceita somente letras',
+            'description.unique' => 'A descrição inserido já existe',
             'description.min' => 'O campo descrição tem menos de 10 caractéres',
             'description.max' => 'O campo descrição tem mais de 25 caractéres',
         ];
