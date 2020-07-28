@@ -52,7 +52,7 @@ class StudentsController extends Controller
         $newStudent = (Student::create($request->all()));
         if ($newStudent) {
             return response()->json([
-                'status' => 'error',
+                'status' => 'success',
                 'message' => 'Aluno Cadastrado',
                 'data' => $newStudent
             ], 201);
