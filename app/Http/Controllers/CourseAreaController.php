@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
+use App\Http\Requests\StoreUpdateCourses;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CourseAreaController extends Controller
 {
@@ -13,7 +16,9 @@ class CourseAreaController extends Controller
      */
     public function index()
     {
-        //
+        $courses = Course::all()->sortBy('id');
+
+        return response()->json($courses , 200);
     }
 
     /**
@@ -29,32 +34,61 @@ class CourseAreaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\StoreUpdateCourses  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $formValidate = new StoreUpdateCourses();
+        $validate = Validator::make($request->all() , $formValidate->rules() , $formValidate->messages());
+//        dd($formValidate->messages());
+
+        if ($validate->fails()) {
+//            $messages = $validate->messages();
+            return response()->json($validate->errors(), 400);
+        }
+
+        $newCourse = (Course::create($request->all()));
+
+        if ($newCourse) {
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Curso Cadastrado',
+                'data' => $newCourse
+            ] ,201);
+        }
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $course
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($course)
     {
-        //
+        $searchCourse = Course::find($course);
+
+        if ($searchCourse ===  1) {
+            return response()->json($searchCourse , 200);
+        }
+
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Curso não encontrado',
+            'data' => []
+        ]);
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($course)
     {
         //
     }
@@ -63,22 +97,48 @@ class CourseAreaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Course $course)
     {
-        //
+        $formValidate = new StoreUpdateCourses();
+        $validate = Validator::make($request->all() , $formValidate->rules() , $formValidate->messages());
+
+        if ($validate->fails()) {
+            $messages = $validate->messages();
+            return response()->json($messages, 400);
+        }
+
+        $course->fill($request->all());
+        $course->update();
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Curso Atualizado',
+            $course
+        ], 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $course
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Course $course)
     {
-        //
+        if ($course->delete()) {
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Curso excluído',
+                'data' => []
+            ], 200);
+        }
+
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Não é possível excluir um curso que não existe',
+                'data' => []
+            ], 204);
     }
 }
