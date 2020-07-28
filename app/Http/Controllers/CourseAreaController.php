@@ -41,15 +41,14 @@ class CourseAreaController extends Controller
     {
         $formValidate = new StoreUpdateCourses();
         $validate = Validator::make($request->all() , $formValidate->rules() , $formValidate->messages());
-//        dd($formValidate->messages());
 
         if ($validate->fails()) {
-//            $messages = $validate->messages();
-            return response()->json($validate->errors(), 400);
+            $messages = $validate->messages();
+            return response()->json($messages, 400);
         }
 
         $newCourse = (Course::create($request->all()));
-
+        dd($newCourse);
         if ($newCourse) {
             return response()->json([
                 'status' => 'success',
@@ -115,7 +114,7 @@ class CourseAreaController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => 'Curso Atualizado',
-            $course
+            'data' => $course
         ], 200);
     }
 
