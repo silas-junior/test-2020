@@ -26,7 +26,7 @@ class StoreUpdateStudents extends FormRequest
         return [
             'name' => 'required|min:3|max:25',
             'email' => 'required|email|unique:students',
-            'birht_date' => 'required|date_format:d/m/Y'
+            'birth_date' => 'required|date'
         ];
     }
 
@@ -42,7 +42,7 @@ class StoreUpdateStudents extends FormRequest
             'email.unique' => 'O email inserido já existe',
 
             'birth_date.required' => 'O campo data de nascimento é obirgatório',
-            'birth_date.date_format' => 'A data inserida não é válida'
+            'birth_date.date' => 'A data inserida não é válida'
         ];
     }
 }
