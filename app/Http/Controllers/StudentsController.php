@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\Validator;
 
 class StudentsController extends Controller
 {
+
+    protected $student, $request;
+
+    public function __construct(Student $student, Request $request)
+    {
+        $this->student = $student;
+        $this->request = $request;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,19 +25,9 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $students = Student::all()->sortBy('id')->toArray();
+        $students = $this->student->orderBy('id')->get();
 
         return response()->json($students, 200);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -37,19 +36,20 @@ class StudentsController extends Controller
      * @param  \Illuminate\Http\StoreUpdateStudents  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         $formValidate = new StoreUpdateStudents();
-        $validate = Validator::make($request->all() , $formValidate->rules(), $formValidate->messages());
+        $validate = Validator::make($this->request->all() , $formValidate->rules(), $formValidate->messages());
 
         if ($validate->fails()) {
             $messages = $validate->errors()->toArray();
-            return response()->json($messages, 400);
+            return response()->json([
+                'status' => 'error',
+                'messages' => $messages
+            ], 400);
         }
 
-//        dd($request->all());
-
-        $newStudent = (Student::create($request->all()));
+        $newStudent = ($this->student->create($this->request->all()));
         if ($newStudent) {
             return response()->json([
                 'status' => 'success',
@@ -66,9 +66,9 @@ class StudentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($student)
+    public function show($studentId)
     {
-        $searchStudent = Student::find($student);
+        $searchStudent = $this->student->find($studentId);
         if ($searchStudent) {
             return response()->json($searchStudent, 200);
         }
@@ -81,38 +81,27 @@ class StudentsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Student $studentId)
     {
         $formValidate = new StoreUpdateStudents();
-        $validate = Validator::make($request->all(), $formValidate->rules(), $formValidate->messages());
+        $validate = Validator::make($this->request->all(), $formValidate->rules(), $formValidate->messages());
         if ($validate->fails()) {
             $message = $validate->errors()->toArray();
             return response()->json($message, 400);
         }
 
-        $student->fill($request->all());
-        if ($student->update()) {
+        $studentId->fill($this->request->all());
+        if ($studentId->update()) {
             return response()->json([
                 'status' => 'success',
                 'message' => 'Registro de aluno atualizado',
-                'data' => $student
+                'data' => $studentId
             ], 200);
         }
     }
@@ -123,14 +112,9 @@ class StudentsController extends Controller
      * @param  int  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(Student $studentId)
     {
-        if ($student->delete()) {
-            return response()->json([
-                'status' => 'success',
-                'message' => 'Registro de aluno excluído',
-                'data' => []
-            ], 200);
-        }
+        $studentId->delete();
+        return response()->json([], 204);
     }
 }
